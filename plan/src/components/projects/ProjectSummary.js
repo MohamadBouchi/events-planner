@@ -5,8 +5,8 @@ export default function ProjectSummary({project}) {
     <div className="card z-depth-0 project-summary">
         <div className="card-content grey-text text-darken-3">
             <span className="card-title">{project.title}</span>
-            <p>posted by</p>
-            <p className="grey-text">01.01.2019</p>
+            <p>posted by {project.authorFirstName}</p>
+            <p className="grey-text">{ project.createdAt.toDate().toString()}</p>
         </div>
     </div>
   )
