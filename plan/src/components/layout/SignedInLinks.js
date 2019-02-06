@@ -3,14 +3,19 @@ import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { signOut } from '../../store/actions/authActions';
 
+
 const SignedInLinks = (props) => {
+    function handleClick(e){
+        e.preventDefault();
+        props.signOut();
+    }
   return (
     <ul className="right">
         <li>
             <NavLink to='/create'>new project</NavLink>
         </li>
         <li>
-            <a onClick={props.signOut}>logout</a>
+            <a onClick={handleClick} href="/">logout</a>
         </li>
         <li>
             <NavLink to='/' className='btn btn-floating pink lighten-1'>MM</NavLink>
